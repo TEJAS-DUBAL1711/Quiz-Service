@@ -25,15 +25,15 @@ public class QuestionService {
         List<Question> questions=new ArrayList<>();
 
         questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
-        questions.add(new Question(1,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(2,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(3,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(4,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(5,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(6,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(7,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(8,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(9,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
+        questions.add(new Question(10,"Which of the following is a valid keyword in Java?","include", "unsigned", "extends", "implement", "extends", "Easy"));
 
 
         repo.saveAll(questions);
