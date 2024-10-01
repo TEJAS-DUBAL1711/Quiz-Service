@@ -17,8 +17,9 @@ import lombok.NoArgsConstructor;
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String category;
     private String  questionTitle;
     private String option1;
     private String option2;
@@ -28,5 +29,14 @@ public class Question {
     private String difficultylevel;
 
 
-
+    public Question(String category, String questionTitle, String option1, String option2, String option3, String option4, String rightAnswer, String difficultylevel) {
+        this.category = category;
+        this.questionTitle = questionTitle;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+        this.rightAnswer = rightAnswer;
+        this.difficultylevel = difficultylevel;
+    }
 }
