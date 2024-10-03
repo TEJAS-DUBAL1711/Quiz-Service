@@ -3,8 +3,9 @@ package com.TJ7.QuizService.service;
 import com.TJ7.QuizService.model.Question;
 import com.TJ7.QuizService.repo.QuestionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +16,20 @@ public class QuestionService {
     @Autowired
     private QuestionRepo repo;
 
-    public List<Question> getAllQuestions(){
+    public ResponseEntity<List<Question>> getAllQuestions(){
 
-        return repo.findAll();
+        try{
+            return new ResponseEntity<>(repo.findAll(),HttpStatus.OK);
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.BAD_REQUEST);
 
     }
 
+/*
     public void load() {
 
         List<Question> questions=new ArrayList<>();
@@ -40,13 +49,33 @@ public class QuestionService {
         repo.saveAll(questions);
     }
 
+*/
 
-    public List<Question> getQuestionsByCategory(String category) {
+    public ResponseEntity<List<Question>> getQuestionsByCategory(String category) {
 
-        return repo.findAllByCategory(category);
+            try{
+                return new ResponseEntity(repo.findAllByCategory(category), HttpStatus.OK);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+            return new ResponseEntity<>(new ArrayList<>(),HttpStatus.BAD_REQUEST);
+
+
     }
 
-    public void addQuestions(Question question) {
-        repo.save(question);
+    public ResponseEntity addQuestions(Question question) {
+
+        try{
+            repo.save(question);
+
+            return  new ResponseEntity("Done",HttpStatus.CREATED);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return new ResponseEntity(null,HttpStatus.BAD_REQUEST);
     }
 }

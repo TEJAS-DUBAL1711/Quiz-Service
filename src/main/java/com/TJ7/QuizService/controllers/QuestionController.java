@@ -3,8 +3,8 @@ package com.TJ7.QuizService.controllers;
 
 import com.TJ7.QuizService.model.Question;
 import com.TJ7.QuizService.service.QuestionService;
-import org.aspectj.weaver.patterns.TypePatternQuestions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,11 +17,12 @@ public class QuestionController {
     private QuestionService service;
 
     @GetMapping("questions")
-    public List<Question> getAllQuestions(){
+    public ResponseEntity<List<Question>> getAllQuestions(){
 
         return service.getAllQuestions();
     }
 
+/*
     @GetMapping("load")
     public String load(){
 
@@ -29,18 +30,19 @@ public class QuestionController {
         return "Loding successfull...";
     }
 
+ */
+
     @GetMapping("category/{category}")
-    public List<Question>getQuestionsByCategory(@PathVariable String category){
+    public ResponseEntity<List<Question>>getQuestionsByCategory(@PathVariable String category){
 
     return  service.getQuestionsByCategory(category);
 
     }
 
     @PostMapping("add")
-    public String addQuestions(@RequestBody Question question){
+    public ResponseEntity<String> addQuestions(@RequestBody Question question){
 
-        service.addQuestions(question);
-        return "Done";
+         return service.addQuestions(question);
     }
 
 }

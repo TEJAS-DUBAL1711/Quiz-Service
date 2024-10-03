@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 
 @AllArgsConstructor
@@ -39,4 +40,8 @@ public class Question {
         this.rightAnswer = rightAnswer;
         this.difficultylevel = difficultylevel;
     }
+
+
+
+
 }
